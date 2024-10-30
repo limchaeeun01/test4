@@ -1,5 +1,5 @@
 import PostItem from "./PostItem";
-import '../pages/css/style2.css';
+import '../pages/css/style.css';
 import { Pagination } from '@mui/material';
 import { useState } from 'react';
 

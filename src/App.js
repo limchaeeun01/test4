@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import { PostListView2 } from './pages/PostListView2';
+import { PostListView } from './pages/PostListView';
 
 function App() {
   return (
     <div className="App">
-      <PostListView2/>
+      <PostListView/>
     </div>
   );
 }

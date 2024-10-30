@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../pages/css/style2.css';
+import '../pages/css/style.css';
 import { Grid } from '@mui/material';
 
 function PostItem({ data }) {
