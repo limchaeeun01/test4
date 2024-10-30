@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Checkbox } from '@mui/material';
+import '../pages/css/style2.css';
+import { Grid } from '@mui/material';
 
 function PostItem({ data }) {
 
@@ -8,20 +9,25 @@ function PostItem({ data }) {
         <Grid container spacing={2}>
             <Grid item xs={12} md={12} lg={8}>
                 <div className="left-area" >
-                <img style={{ position: 'absolute'}} src="/img/vector-4.svg"/>
+                    {data.isReceiptVerified && (
+                        <img style={{ position: 'absolute' }} src="/img/vector-4.svg" />
+                    )}
                 <div className="post-img">
                     {/* 여기 이미지 넣으셈 */}
                 </div>
 
                 <div style={{ padding: '20px', width: '100%'}}>
-                    <div className="receipt-verification-text">영수증 미인증 게시글</div>
+                    <div className="receipt-verification-text" 
+                        style={{ color: data.isReceiptVerified ? "#00B058" : "black" }}>
+                        {data.isReceiptVerified ? "영수증 인증 게시글" : "영수증 미인증 게시글"}
+                    </div>
                     <div className="user-info">
                     <div className="user-profile-img">
                         {/* 여기 이미지 넣으셈 */}
                     </div>
                     
                     <div style={{ marginLeft: '10px'}}>
-                        <div className="user-name-text">USER Name</div>
+                        <div className="user-name-text">{data.userName}</div>
                         <div className="write-date-text">18일 전 작성</div>
                     </div>
                     </div>
@@ -54,32 +60,32 @@ function PostItem({ data }) {
                 </div>
             </Grid>
             <Grid item xs={12} md={12} lg={4}>
-                <div style={{ display: 'flex', height: '100%', marginRight: '20px', alignItems: 'center'}} >
+                <div style={{ display: 'flex', height: '100%', alignItems: 'center'}} >
                 <div className="right-area">
                     <div style={{ display: 'flex', flexWrap: 'wrap', width: '100%', columnGap: '30px'}}>
                     <div className="card-div">
                         <div className="text-1">작성자 감정</div>
 
                         <div className="card-container">
-                        <div className="card">
-                            <div style={{ width: '100%'}}>
-                            <img className="img-icon" src="/img/korean.svg" />
+                            <div className="card">
+                                <div style={{ width: '100%'}}>
+                                <img className="img-icon" src="/img/korean.svg" />
+                                </div>
+
+                                <div style={{ backgroundColor: '#FF81D3', width: '100%', borderTopRightRadius: '5px', borderBottomRightRadius: '5px', alignContent: 'center'}}>
+                                <div className="card-text">행복</div>
+                                </div>
                             </div>
 
-                            <div style={{ backgroundColor: '#FF81D3', width: '100%', borderTopRightRadius: '5px', borderBottomRightRadius: '5px', alignContent: 'center'}}>
-                            <div className="card-text">행복</div>
-                            </div>
-                        </div>
+                            <div className="card">
+                                <div style={{ width: '100%'}}>
+                                <img className="img-icon" src="/img/korean.svg" />
+                                </div>
 
-                        <div className="card">
-                            <div style={{ width: '100%'}}>
-                            <img className="img-icon" src="/img/korean.svg" />
+                                <div style={{ backgroundColor: '#FF81D3', width: '100%', borderTopRightRadius: '5px', borderBottomRightRadius: '5px', alignContent: 'center'}}>
+                                <div className="card-text">행복</div>
+                                </div>
                             </div>
-
-                            <div style={{ backgroundColor: '#FF81D3', width: '100%', borderTopRightRadius: '5px', borderBottomRightRadius: '5px', alignContent: 'center'}}>
-                            <div className="card-text">행복</div>
-                            </div>
-                        </div>
                         </div>
                         
                     </div>
@@ -116,9 +122,9 @@ function PostItem({ data }) {
                     
 
                     <button className="detail-btn">
-                    <div className="detail-text">상세보기</div>
+                        <div className="detail-text">상세보기</div>
                     </button>
-                    
+                
                 </div>
                 
                 </div>
